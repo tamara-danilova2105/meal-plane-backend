@@ -1,7 +1,7 @@
 const mealModel = require('./mealModel');
 
-module.exports.getMeal = async (req, res) => {
-    const resultMeal = await mealModel.find();
+module.exports.getMeal = async (_, res) => {
+    const resultMeal = await mealModel.find().sort({ _id: -1 });
     res.send(resultMeal);
 };
 
