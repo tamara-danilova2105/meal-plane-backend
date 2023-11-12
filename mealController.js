@@ -22,3 +22,8 @@ module.exports.editMeal = async (req, res) => {
     mealModel.findByIdAndUpdate(_id, { title })
         .then(() => res.send('Edided a meal'));
 }
+
+module.exports.deleteAll = async (_, res) => {
+    mealModel.deleteMany({})
+        .then(() => res.send('Deleted All'))
+}
