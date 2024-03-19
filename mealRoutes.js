@@ -4,8 +4,8 @@ const { getMeal, saveMeals, deleteMeal, editMeal, deleteAll } = require("./mealC
 const router = Router();
 
 router.get('/meals', getMeal);
-router.post('/save-meals', saveMeals);
-router.post('/delete-meals', deleteMeal);
+router.post('/save-meal', saveMeals);
+router.post('/delete-meal', deleteMeal);
 router.post('/delete-all', deleteAll);
 router.put('/edit-meal', editMeal);
 
