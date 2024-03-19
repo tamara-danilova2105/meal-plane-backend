@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const routes = require('./mealRoutes');
-const cors = require('cors')
+const cors = require('cors');
 
 require('dotenv').config();
 

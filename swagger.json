@@ -1,0 +1,69 @@
+{
+    "swagger": "2.0",
+    "title": "MEAL PLANE API Documentation",
+    "description": "MEAL PLANE API",
+    "host": "localhost:8000",
+    "paths": {
+        "/meals": {
+            "get": {
+                "description": "Find all Meals from the database",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "All the meals",
+                        "schema": {
+                            "$ref": "#definitions/Meals"
+                        }
+                    }
+                }
+            }
+        },
+        "/save-meals": {
+            "post": {
+                "description": "Create new Meal in database",
+                "parameters": [
+                   {
+                    "name": "meal",
+                    "in": "body",
+                    "required": "true",
+                    "schema" : {
+                        "$ref" : "#definitions/Meal"
+                      }
+                   } 
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New Meal Created",
+                        "schema": {
+                            "$ref": "#definitions/Meal"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Meals": {
+            "type": "array",
+            "items": {
+                "$ref": "#definitions/Meal"
+            }
+        },
+        "Meal": {
+            "required": [
+                "title"
+            ],
+            "properties": {
+                "title": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
