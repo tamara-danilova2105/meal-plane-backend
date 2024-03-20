@@ -5,6 +5,9 @@ const mealSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    image: {
+        type: String,
+    }
 });
 
 module.exports = mongoose.model('Meal', mealSchema);

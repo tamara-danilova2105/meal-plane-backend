@@ -6,8 +6,8 @@ module.exports.getMeal = async (_, res) => {
 };
 
 module.exports.saveMeals = async (req, res) => {
-    const { title } = req.body;
-    mealModel.create({ title })
+    const { title, image } = req.body;
+    mealModel.create({ title, image })
         .then(data => res.send(data));
 };
 
